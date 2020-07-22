@@ -1,6 +1,5 @@
 /node_modules
 /bin
-/xlsxFiles
 .env
 .DS_Store
 .uploaded.xlsx
