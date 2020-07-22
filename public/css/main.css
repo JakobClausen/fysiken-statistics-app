@@ -1,0 +1,21 @@
+:root {
+  --main-bg-color: #dfdfdf;
+  --main-bg-graph: #c8c8c6;
+  --main-txt-black: #222222;
+  --main-txt-white: #e3e2df;
+  --main-button: #757575;
+  --main-contrast-color: #79c70b;
+
+  --main-border-radius: 10px;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-black);
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}

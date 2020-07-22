@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>{{company}}</h1>
+        <p>Crossfit checkin statistics</p>
+        <p>Can only be <b>.xlsx</b> files</p>
+        <p>Can not exeed <b>1mb</b> in size</p>
+    </div>
+
+
+    {{!-- Upload form --}}
+    <div class='header form'>
+        <p id="src-name"></p>
+        <form action="results" method="post" enctype="multipart/form-data">
+            <label for="file-upload">
+                <p class="upload-text">Upload</p>
+            </label>
+            <input id="file-upload" type="file" name="filetoupload"><br>
+            <input type="submit">
+        </form>
+    </div>
+
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+#spreadsheet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 30px;
+}
+
+.row {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-black);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 0.5px solid black;
+  border-bottom: 0;
+}
+
+.row p {
+  height: 75%;
+  margin: 0;
+  padding-top: 10px;
+  border-left: 0.5px solid black;
+}
+
+.row > p:first-child {
+  border-left: 0;
+}
+
+.row:last-child {
+  border-bottom: 0.5px solid black;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+/* Graph */
+
+#graph-area {
+  text-align: center;
+  margin-top: 100px;
+  background-color: var(--main-bg-graph);
+  border-radius: var(--main-border-radius);
+}
+.graph-area-list-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25%;
+}
+
+.graph-container {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 10px;
+}
