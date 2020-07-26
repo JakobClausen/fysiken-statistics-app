@@ -50,9 +50,9 @@ app.get("/stats", (req, res) => {
   res.render("results", {
     company: "Fysiken",
   });
-  setTimeout(() => {
-    fs.unlinkSync(path.join(__dirname, "../src/uploaded.xlsx"));
-  }, 5000);
+  // setTimeout(() => {
+  //   fs.unlinkSync(path.join(__dirname, "../src/uploaded.xlsx"));
+  // }, 5000);
 });
 
 // Form post request endpoint, reads the .xlsx file
