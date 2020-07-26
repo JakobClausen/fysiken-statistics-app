@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const Buffer = require("buffer/").Buffer;
 const multer = require("multer");
+const bodyParser = require("body-parser");
 
 require("dotenv").config();
 
@@ -17,6 +18,7 @@ const viewsPath = path.join(__dirname, "../templates/views");
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // multer
 const upload = multer({
