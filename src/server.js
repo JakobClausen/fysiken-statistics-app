@@ -18,7 +18,8 @@ const viewsPath = path.join(__dirname, "../templates/views");
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
 app.use(express.static(path.join(__dirname, "../public")));
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // multer
 const upload = multer({
