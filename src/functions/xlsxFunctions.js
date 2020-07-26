@@ -12,7 +12,7 @@ const readXLSX = (doc) => {
 // Creates a new xlsx file for download
 const createXlsx = (jsonForXlsx) => {
   const xls = json2xls(jsonForXlsx);
-  fs.writeFileSync("./newXlsx/data.xlsx", xls, "binary");
+  fs.writeFileSync("./src/data.xlsx", xls, "binary");
 };
 
 module.exports = { createXlsx, readXLSX };

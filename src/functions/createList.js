@@ -36,7 +36,6 @@ const createLists = (jsonData, dates) => {
   });
 
   const jsonForXlsx = removeKeys(statistics);
-  console.log(datesArray);
 
   return { statistics, jsonForXlsx, datesArray };
 };

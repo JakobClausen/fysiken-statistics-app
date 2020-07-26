@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const Buffer = require("buffer/").Buffer;
 const multer = require("multer");
+
 require("dotenv").config();
 
 //Import if want to create new xlsx doc for download
@@ -47,7 +48,7 @@ app.get("/stats", (req, res) => {
     company: "Fysiken",
   });
   setTimeout(() => {
-    fs.unlinkSync(path.join(__dirname, "../xlsxFiles/uploaded.xlsx"));
+    fs.unlinkSync(path.join(__dirname, "../src/uploaded.xlsx"));
   }, 5000);
 });
 
@@ -57,7 +58,7 @@ app.post(
   upload.single("filetoupload"),
   (req, res) => {
     fs.writeFileSync(
-      path.join(__dirname, "../xlsxFiles", "uploaded.xlsx"),
+      path.join(__dirname, "../src", "uploaded.xlsx"),
       Buffer.from(req.file.buffer)
     );
 
@@ -72,18 +73,14 @@ app.post(
 
 // data for the front-end
 app.get("/list", (req, res) => {
-  const { statistics } = xlsxJson(
-    path.join(__dirname, "../xlsxFiles/uploaded.xlsx")
-  );
+  const { statistics } = xlsxJson(path.join(__dirname, "../src/uploaded.xlsx"));
 
   res.send(statistics);
 });
 
 // Array of dates for graph
 app.get("/dates", (req, res) => {
-  const { datesArray } = xlsxJson(
-    path.join(__dirname, "../xlsxFiles/uploaded.xlsx")
-  );
+  const { datesArray } = xlsxJson(path.join(__dirname, "../src/uploaded.xlsx"));
 
   res.send(datesArray);
 });
