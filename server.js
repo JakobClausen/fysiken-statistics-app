@@ -11,13 +11,13 @@ require("dotenv").config();
 //Import if want to create new xlsx doc for download
 // const { createXlsx } = require("../functions/xlsxFunctions");
 
-const xlsxJson = require("./functions/xlsxConvert");
+const xlsxJson = require("./src/functions/xlsxConvert");
 
 // hbs settings
-const viewsPath = path.join(__dirname, "../templates/views");
+const viewsPath = path.join(__dirname, "./templates/views");
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "./public")));
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -61,7 +61,7 @@ app.post(
   upload.single("filetoupload"),
   (req, res) => {
     fs.writeFileSync(
-      path.join(__dirname, "../src", "uploaded.xlsx"),
+      path.join(__dirname, "./src", "uploaded.xlsx"),
       Buffer.from(req.file.buffer)
     );
 
@@ -76,14 +76,14 @@ app.post(
 
 // data for the front-end
 app.get("/list", (req, res) => {
-  const { statistics } = xlsxJson(path.join(__dirname, "../src/uploaded.xlsx"));
+  const { statistics } = xlsxJson(path.join(__dirname, "./src/uploaded.xlsx"));
 
   res.send(statistics);
 });
 
 // Array of dates for graph
 app.get("/dates", (req, res) => {
-  const { datesArray } = xlsxJson(path.join(__dirname, "../src/uploaded.xlsx"));
+  const { datesArray } = xlsxJson(path.join(__dirname, "./src/uploaded.xlsx"));
 
   res.send(datesArray);
 });
