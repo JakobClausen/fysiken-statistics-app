@@ -1,10 +1,6 @@
 # fysiken-statistics-app
 
 This web app allows the user to upload a .xlsx file and get statistics along with some graphs using D3 library. 
-
-<p align="center">
-<img src="/gitImg/one.png" alt="Statistic app" width="738">
-</p>     
      
 <p align="center">         
  <img src="/gitImg/two.png" alt="Statistic app" width="738">
